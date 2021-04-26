@@ -1,37 +1,42 @@
-package com.hoanganh.blog.entity;
+package com.hoanganh.blog.DTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="users")
-public class UserEntity extends Auditable<String>{
+public class UserDTO {
+private Long id;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name="username")
 	private String username;
 	
-	@Column(name="password")
 	private String password;
 	
-	@Column(name="fullname")
 	private String fullname;
 	
-	@Column(name="address")
 	private String address;
 	
-	@Column(name="gender")
 	private String gender;
 	
-	@Column(name="age")
 	private Long age;
+
+	public UserDTO() {
+		
+	}
+	
+	public UserDTO(Long id, String username, String password, String fullname, String address, String gender,
+			Long age) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+		this.address = address;
+		this.gender = gender;
+		this.age = age;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getUsername() {
 		return username;
@@ -80,11 +85,6 @@ public class UserEntity extends Auditable<String>{
 	public void setAge(Long age) {
 		this.age = age;
 	}
-
-	public Long getId() {
-		return id;
-	}
-	
 	
 	
 }
