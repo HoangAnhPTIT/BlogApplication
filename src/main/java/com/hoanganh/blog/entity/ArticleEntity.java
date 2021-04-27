@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ArticleEntity extends Auditable<String>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 	
 	@Column(name="description")
 	private String description;
@@ -20,7 +20,16 @@ public class ArticleEntity extends Auditable<String>{
 	@Column(name="content")
 	private String content;
 
-	@Column(name="user_id")
+	@Column(name="like_count")
+	private Integer like;
+	
+	@Column(name="share")
+	private Integer share;
+	
+	@Column(name="image")
+	private String image;
+	
+	@Column(name="user_id", nullable = false)
 	private Long userId;
 	
 	public String getDescription() {
@@ -40,7 +49,7 @@ public class ArticleEntity extends Auditable<String>{
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public Long getUserId() {

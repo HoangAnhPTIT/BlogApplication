@@ -15,6 +15,8 @@ private Long id;
 	
 	private Long age;
 
+	private Long[] ids;
+	
 	public UserDTO() {
 		
 	}
@@ -84,6 +86,14 @@ private Long id;
 
 	public void setAge(Long age) {
 		this.age = age;
+	}
+
+	public Long[] getIds() {
+		return ids;
+	}
+
+	public void setIds(Long[] ids) {
+		this.ids = ids;
 	}
 	
 	
